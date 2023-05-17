@@ -1,0 +1,156 @@
+﻿html
+{
+  font-size: 14px;
+}
+
+@media (min-width: 768px)
+{
+  html
+  {
+    font-size: 16px;
+  }
+}
+
+html
+{
+  position: relative;
+  min-height: 100%;
+  font-family: "Ubuntu";
+}
+
+*:not(.fa-solid):not(.fa):not(.e-icons)
+{
+  font-family: "Ubuntu";
+}
+
+body
+{
+  margin-bottom: 60px;
+  background-color: #f4f7f6;
+  color: #5a5a5a;
+}
+
+.e-bigger
+{
+  font-size: x-large;
+}
+
+.no-a-decoration, .no-a-decoration:hover
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* BreadCrumb */
+.e-breadcrumb a, .e-breadcrumb a:hover
+{
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+
+/* Category table */
+.e-grid {
+  border: 0;
+  border-radius: 5px;
+}
+
+  .e-grid .e-gridcontent, .e-grid .e-table {
+      background-color: #fff;
+      color: #fff;
+  }
+
+  .e-grid .e-gridheader {
+      border: 5px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      padding: 10px;
+      background-color: #3eacff;
+  }
+
+      .e-grid .e-gridheader .e-headercell {
+          background-color: #3eacff;
+      }
+
+  .e-grid .e-gridpager {
+      background-color: #fff;
+  }
+
+  .e-grid .e-pagercontainer {
+      border: none;
+      background-color: #fff;
+  }
+
+  .e-grid .e-content table {
+      padding: 0px 10px;
+  }
+
+.e-pagercontainer .e-icons {
+  background-color: #fff;
+  border: none !important;
+}
+
+.e-pager .e-numericitem {
+  color: #adb5bd;
+  background-color: #fff;
+  padding: 15px !important;
+}
+
+  .e-pager .e-numericitem:not(.e-currentitem) {
+      border: none !important;
+  }
+
+  .e-pager .e-numericitem:hover {
+      color: #fff;
+  }
+
+  .e-pager .e-numericitem.e-currentitem {
+      color: #fff;
+      border: none !important;
+      background-color: #31373d;
+  }
+
+.e-pager div.e-icons:not(.e-disable) {
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.e-grid .e-pager {
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+/* Custom radio button settings */
+.e-btn-group.custom-rbt
+{
+  width: 100%;
+}
+.e-btn-group.custom-rbt .e-btn
+{
+  width: 50%;
+}
+
+.custom-rbt label.e-btn
+{
+  box-shadow: none !important;
+  border: 1px solid #6c757d;
+  background-color: #6c757d;
+}
+
+.e-btn-group.custom-rbt input:checked + label.e-btn
+{
+  background-color: #3eacff;
+  color: #fff;
+  border: 1px solid #3eacff;
+}
+
+/* Widget */
+.widget
+{
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 #0000001a;
+}
