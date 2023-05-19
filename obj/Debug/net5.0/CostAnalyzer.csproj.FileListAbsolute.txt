@@ -73,3 +73,5 @@ C:\Users\dabilkhan\Desktop\CostAnalyzer\bin\Debug\net5.0\Syncfusion.Licensing.dl
 C:\Users\dabilkhan\Desktop\CostAnalyzer\obj\Debug\net5.0\CostAnalyzer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\dabilkhan\Desktop\CostAnalyzer\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\dabilkhan\Desktop\CostAnalyzer\obj\Debug\net5.0\Razor\Views\Category\CreateOrEdit.cshtml.g.cs
+C:\Users\dabilkhan\Desktop\CostAnalyzer\obj\Debug\net5.0\Razor\Views\Transaction\CreateOrEdit.cshtml.g.cs
+C:\Users\dabilkhan\Desktop\CostAnalyzer\obj\Debug\net5.0\Razor\Views\Transaction\Index.cshtml.g.cs

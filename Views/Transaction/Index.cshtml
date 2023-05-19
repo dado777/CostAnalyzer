@@ -1,0 +1,75 @@
+@model IEnumerable<CostAnalyzer.Models.Category>
+
+@{
+    ViewData["PageTitle"] = "Транзакции";
+    ViewData["PageActionText"] = "+ Новая транзакция";
+    ViewData["PageActionUrl"] = "/Transaction/CreateOrEdit";
+}
+
+<div class="row">
+    <div class="col-md-7">
+        <ejs-grid id="categories" dataSource="@Model" gridLines="None" allowSorting="true"  locale="ru-RU" allowPaging="true">
+            <e-grid-pagesettings pageSize="5"></e-grid-pagesettings>
+            <e-grid-columns>
+                <e-grid-column headerText="Название" field="TitleWithIcon"></e-grid-column>
+                <e-grid-column headerText="Тип" template="#typeColumn" width="100px"></e-grid-column>
+                <e-grid-column headerText="Действия" template="#actionColumn" width="150px"></e-grid-column>
+            </e-grid-columns>
+        </ejs-grid>
+    </div>
+    <div class="col-md-5">
+        <div class="widget h-100 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-database fa-4x"></i>
+        </div>
+    </div>
+</div>
+
+<!-- CSS badge for income/expence -->
+<script id="typeColumn" type="text/x-template">
+    ${if(Type == "Доход")}
+        <span class="badge bg-success text-light">${Type}</span>
+    ${else}
+        <span class="badge bg-danger text-light">${Type}</span>
+    ${/if}
+</script>
+
+<!-- CSS action icons(Edit/Delete) -->
+<script id="actionColumn" type="text/x-template">
+    <div class="d-flex flex-row justify-content-start">
+        <a class="btn btn-sm" href="/Category/CreateOrEdit/${CategoryId}">
+            <i class="fa-solid fa-pen fa-lg"></i>
+        </a>
+        <form action="/Category/Delete/${CategoryId}" method="post">
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-sm btn-link no-a-decoration" onclick="return confirm(&quot;Вы действительно хотите удалить?&quot;)">
+                <i class="fa-solid fa-trash-can fa-lg text-danger"></i>
+            </button>
+        </form>
+    </div>
+</script>
+
+<!-- Grid localization for russian language -->
+<script type="text/javascript"> 
+        ej.base.L10n.load({ 
+            'ru-RU': { 
+                'grid': { 
+                    'EmptyRecord': 'Нет отображаемых данных', 
+                    'GroupDropArea': 'Перетащите сюда заголовок столбца, чтобы сгруппировать столбец', 
+                    'UnGroup': 'Нажмите здесь, чтобы разгруппировать', 
+                    'EmptyDataSourceError': 'DataSource не должен быть пустым при начальной загрузке, поскольку столбцы из dataSource находятся в сетке столбцов AutoGenerate', 
+                    'Item': 'Предмет', 
+                    'Items': 'Предметы' 
+                }, 
+                'pager': { 
+                    'currentPageInfo': '{0} из {1} страниц', 
+                    'totalItemsInfo': '({0} кол-во)', 
+                    'firstPageTooltip': 'На первую страницу', 
+                    'lastPageTooltip': 'Перейти на последнюю страницу', 
+                    'nextPageTooltip': 'На следующую страницу', 
+                    'previousPageTooltip': 'Вернуться на предыдущую страницу', 
+                    'nextPagerTooltip': 'Следующая страница', 
+                    'previousPagerTooltip': 'Предыдущая страница' 
+                } 
+            } 
+        }); 
+</script> 
