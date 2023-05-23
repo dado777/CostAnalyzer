@@ -27,6 +27,7 @@ namespace CostAnalyzer.Controllers
         // HTTP GET METHOD: CreateOrEdit
         public IActionResult CreateOrEdit(Int32 id = 0)
         {
+            GetCategories();
             if(id == 0)
                 return View(new Transaction());
             else
@@ -49,6 +50,8 @@ namespace CostAnalyzer.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
+            GetCategories();
+
             return View(transaction);
         }
 
@@ -68,6 +71,17 @@ namespace CostAnalyzer.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [NonAction]
+        public void GetCategories()
+        {
+            var categoryList = _context.Categories.ToList();
+            Category defaultCategory = new Category() { CategoryId = 0, Title = "Выберите категорию"};
+            
+            categoryList.Insert(0, defaultCategory);
+
+            ViewBag.Categories = categoryList;
         }
     }
 }
